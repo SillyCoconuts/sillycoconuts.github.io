@@ -13,39 +13,37 @@
             margin: 0;
             padding: 50px;
         }
-        a {
+        .clickable {
+            cursor: pointer;
             color: #00ff00;
-            text-decoration: none;
             font-size: 20px;
+            transition: color 0.3s;
         }
-        a:hover {
+        .clickable:hover {
             color: #ff0000;
         }
-        .hidden-link {
-            display: none;
+        .link {
+            color: #ff00ff;
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
 
     <h1>Welcome to the Among Us Sus Page!</h1>
-    <p>Everything is <a href="#">clickable</a> here. Be careful, there might be an imposter among us!</p>
+    <p>Everything is <span class="clickable">clickable</span> here. Be careful, there might be an <span id="imposter">imposter</span> among us!</p>
     
-    <p>Did you see the latest <a href="#">Among Us update</a>? It's very <a href="#">suspicious</a>!</p>
+    <p>Did you see the latest <span class="clickable">Among Us update</span>? It's very <span class="clickable">suspicious</span>!</p>
     
-    <p>What do you think about the new <a href="#">skins</a>? Are they <a href="#">too sus</a>?</p>
+    <p>What do you think about the new <span class="clickable">skins</span>? Are they <span class="clickable">too sus</span>?</p>
     
-    <p>Play with your friends and see who's the real <a href="#">imposter</a>!</p>
-    
-    <div class="hidden-link">
-        <a href="averybigsecret.html">This is the real secret!</a>
-    </div>
+    <p>Play with your friends and see who's the real <span class="clickable">imposter</span>!</p>
 
     <script>
-        // Randomly reveal the hidden link after a few seconds
+        // Change the "imposter" word to a link after 5 seconds
         setTimeout(() => {
-            document.querySelector('.hidden-link').style.display = 'block';
-            alert("The hidden link has been revealed! Click around!");
+            const imposterSpan = document.getElementById('imposter');
+            imposterSpan.innerHTML = '<a href="averybigsecret.html" class="link">imposter</a>';
         }, 5000); // 5 seconds delay
     </script>
 
